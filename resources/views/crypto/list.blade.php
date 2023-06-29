@@ -3,13 +3,13 @@
     <link href="{{ asset('style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container mx-auto py-8 text-center">
+    <div class="container mx-auto py-8 text-center dark-mode:bg-gray-900 dark-mode:text-white">
         <h1 class="text-2xl font-bold mb-4">Top 100 Cryptocurrencies</h1>
         <div class="dark-mode-toggle">
             <input type="checkbox" id="darkModeToggle" />
             <label for="darkModeToggle"></label>
         </div>
-        <table class="border-collapse border border-gray-300 w-full">
+        <table class="border-collapse border border-gray-300 dark-mode:border-gray-600 w-full">
             <thead>
                 <tr>
                     <th class="p-2 border border-gray-300">ID</th>
@@ -34,13 +34,12 @@
                         <td class="p-2 border border-gray-300">{{ $crypto['price_change_percentage_24h'] }}%</td>
                         <td class="p-2 border border-gray-300">{{ $crypto['price_change_percentage_24h'] }}%</td>
                         <td class="p-2 border border-gray-300">${{ number_format($crypto['market_cap']) }}</td>
-
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.crypto-row').click(function () {
