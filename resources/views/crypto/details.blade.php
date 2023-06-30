@@ -2,7 +2,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <div class="container mx-auto py-8">
         <div class="flex items-center">
-            <div class="w-1/2">
+            <div class="w-1/2 ml-12">
                 <div class="flex items-center">
                     <img src="{{ $crypto['image']['large'] }}" class="w-10 h-10 mr-2" />
                     <h1 class="text-2xl font-bold mb-4">{{ $crypto['name'] }}</h1>
@@ -28,11 +28,22 @@
                 </div>
                 <div class="mt-8">
                     <h3 class="text-lg font-bold mb-2">Other Currencies:</h3>
-                    <p>Price in USD: ${{ number_format($crypto['market_data']['current_price']['usd'], 2) }}</p>
-                    <p>Price in EUR: €{{ number_format($crypto['market_data']['current_price']['eur'], 2) }}</p>
-                    <p>Price in JPY: ¥{{ number_format($crypto['market_data']['current_price']['jpy'], 2) }}</p>
+                    <div class="flex">
+                        <div>
+                            <p>Price in USD: ${{ number_format($crypto['market_data']['current_price']['usd'], 2) }}</p>
+                            <p>Price in EUR: €{{ number_format($crypto['market_data']['current_price']['eur'], 2) }}</p>
+                            <p>Price in JPY: ¥{{ number_format($crypto['market_data']['current_price']['jpy'], 2) }}</p>
+                        </div>
+                        <div class="ml-12">
+                            <p>Price in GBP: £{{ number_format($crypto['market_data']['current_price']['gbp'], 2) }}</p>
+                            <p>Price in CAD: C${{ number_format($crypto['market_data']['current_price']['cad'], 2) }}</p>
+                            <p>Price in AUD: A${{ number_format($crypto['market_data']['current_price']['aud'], 2) }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </div>
         <div class="flex justify-center mt-8">
             <a href="{{ route('crypto.list') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back to List</a>
