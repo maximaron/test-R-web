@@ -31,8 +31,8 @@
                             </div>
                         </td>
                         <td class="p-2 border border-gray-300">${{ number_format($crypto['current_price'], 4) }}</td>
-                        <td class="p-2 border border-gray-300">{{ $crypto['price_change_percentage_24h'] }}%</td>
-                        <td class="p-2 border border-gray-300">{{ $crypto['price_change_percentage_24h'] }}%</td>
+                        <td class="p-2 border border-gray-300">{{ $crypto['high_24h'] }}$</td>
+                        <td class="p-2 border border-gray-300">{{ $crypto['low_24h'] }}$</td>
                         <td class="p-2 border border-gray-300">${{ number_format($crypto['market_cap']) }}</td>
                     </tr>
                 @endforeach

@@ -32,7 +32,7 @@ class CryptoController extends Controller
         return view('crypto.list', compact('cryptos', 'error'));
     }
 
-    public function show($id)
+    public function show($id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
     {
         try {
             $response = Http::get("https://api.coingecko.com/api/v3/coins/$id");
